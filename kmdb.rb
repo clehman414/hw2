@@ -87,27 +87,6 @@ Role.destroy_all
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
-#puts "movies: #{Movie.all.count}"
-
-new_movie = Movie.new
-new_movie["movie_title"] = "Batman Begins"
-new_movie["year"] = "2005"
-new_movie["mpaa_rating"] = "PG-13"
-new_movie.save
-
-new_movie = Movie.new
-new_movie["movie_title"] = "The Dark Knight"
-new_movie["year"] = "2008"
-new_movie["mpaa_rating"] = "PG-13"
-new_movie.save
-
-new_movie = Movie.new
-new_movie["movie_title"] = "The Dark Knight Rises"
-new_movie["year"] = "2012"
-new_movie["mpaa_rating"] = "PG-13"
-new_movie.save
-
-#puts "movies: #{Movie.all.count}"
 
 #puts "studios: #{Studio.all.count}"
 
@@ -116,6 +95,34 @@ new_studio["studio_name"] = "Warner Bros."
 new_studio.save
 
 #puts "studios: #{Studio.all.count}"
+
+#puts "movies: #{Movie.all.count}"
+
+#warner_bros = Studio.find_by({"studio_name" => "Warner Bros."})
+
+new_movie = Movie.new
+new_movie["movie_title"] = "Batman Begins"
+new_movie["year"] = 2005
+new_movie["mpaa_rating"] = "PG-13"
+#new_movie["studio_id"] = warner_bros["id"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie["movie_title"] = "The Dark Knight"
+new_movie["year"] = 2008
+new_movie["mpaa_rating"] = "PG-13"
+#new_movie["studio_id"] = warner_bros["id"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie["movie_title"] = "The Dark Knight Rises"
+new_movie["year"] = 2012
+new_movie["mpaa_rating"] = "PG-13"
+#new_movie["studio_id"] = warner_bros["id"]
+new_movie.save
+
+#all_movies = Movie.all
+#puts "movies: #{Movie.all.count}"
 
 puts "actors: #{Actor.all.count}"
 
