@@ -172,6 +172,7 @@ new_actor["actor_name"] = "Anne Hathaway"
 new_actor.save
 
 #puts "actors: #{Actor.all.count}"
+
 batman_begins = Movie.find_by({"movie_title" => "Batman Begins"})
 the_dark_knight = Movie.find_by({"movie_title" => "The Dark Knight"})
 the_dark_knight_rises = Movie.find_by({"movie_title" => "The Dark Knight Rises"})
@@ -291,6 +292,18 @@ puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
+movies = Movie.all
+index = 0
+loop do
+    if index == movies.size
+        break
+    end
+    movie = movies[index]
+    studio = Studio.find_by({"id" => movie["studio_id"]})
+
+    puts "#{movie.movie_title} #{movie.year} #{movie.mpaa_rating} #{studio.studio_name}"
+    index = index + 1
+end
 
 # Prints a header for the cast output
 puts ""
@@ -300,3 +313,15 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+ = Movie.all
+index = 0
+loop do
+    if index == movies.size
+        break
+    end
+    movie = movies[index]
+    studio = Studio.find_by({"id" => movie["studio_id"]})
+
+    puts "#{movie.movie_title} #{movie.year} #{movie.mpaa_rating} #{studio.studio_name}"
+    index = index + 1
+end
