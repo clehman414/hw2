@@ -313,15 +313,16 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
- = Movie.all
+roles = Role.all
 index = 0
 loop do
-    if index == movies.size
+    if index == roles.size
         break
     end
-    movie = movies[index]
-    studio = Studio.find_by({"id" => movie["studio_id"]})
+    role = roles[index]
+    movie = Movie.find_by({"id" => role["movie_id"]})
+    actor = Actor.find_by({"id" => role["actor_id"]})
 
-    puts "#{movie.movie_title} #{movie.year} #{movie.mpaa_rating} #{studio.studio_name}"
+    puts "#{movie.movie_title} #{actor.actor_name} #{role.character_name}"
     index = index + 1
 end
