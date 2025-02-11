@@ -87,7 +87,7 @@ Role.destroy_all
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
-puts "movies: #{Movie.all.count}"
+#puts "movies: #{Movie.all.count}"
 
 new_movie = Movie.new
 new_movie["movie_title"] = "Batman Begins"
@@ -107,7 +107,63 @@ new_movie["year"] = "2012"
 new_movie["mpaa_rating"] = "PG-13"
 new_movie.save
 
-puts "movies: #{Movie.all.count}"
+#puts "movies: #{Movie.all.count}"
+
+#puts "studios: #{Studio.all.count}"
+
+new_studio = Studio.new
+new_studio["studio_name"] = "Warner Bros."
+new_studio.save
+
+#puts "studios: #{Studio.all.count}"
+
+puts "actors: #{Actor.all.count}"
+
+new_actor = Actor.new
+new_actor["actor_name"] = "Christian Bale"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["actor_name"] = "Michael Caine"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["actor_name"] = "Liam Neeson"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["actor_name"] = "Katie Holmes"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["actor_name"] = "Gary Oldman"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["actor_name"] = "Heath Ledger"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["actor_name"] = "Aaron Eckhart"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["actor_name"] = "Maggie Gyllenhaal"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["actor_name"] = "Tom Hardy"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["actor_name"] = "Joseph Gordon-Levitt"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["actor_name"] = "Anne Hathaway"
+new_actor.save
+
+puts "actors: #{Actor.all.count}"
 
 # Prints a header for the movies output
 puts "Movies"
